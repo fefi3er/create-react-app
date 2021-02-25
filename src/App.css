@@ -1,44 +1,121 @@
-main {
-  align-content: center;
-  box-sizing: border-box;
-  display: grid;
-  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-    'Arial', sans-serif;
-  hyphens: auto;
-  line-height: 1.65;
-  margin: 0 auto;
-  max-width: 680px;
-  min-height: 100vh;
-  padding: 72px 0;
-  text-align: center;
+body{
+    padding:20px;
 }
-h1 {
-  font-size: 45px;
+.box{
+    width:500px;
+    padding:15px 10px;
+    border:1px solid #ccc;
 }
-h2 {
-  margin-top: 1.5em;
+.table{
+    border:1px solid #ccc;
 }
-p {
-  font-size: 16px;
+.header{
+    font-size:24px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    color:rgb(0, 194, 253);
+    border-bottom: 1px dotted #ccc;
 }
-a {
-  border-bottom: 1px solid white;
-  color: #0076ff;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease;
+
+.tab{
+    display: flex;
+    border-bottom: 1px dotted #ccc;
 }
-a:hover {
-  border-bottom: 1px solid #0076ff;
+.tab>div{
+    width:50%;
+    padding:10px;
+    line-height:28px;
 }
-code,
-pre {
-  color: #d400ff;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-size: 0.92em;
+
+.tab>div>div:first-child{
+    font-size:16x;
+    color:rgb(0, 119, 255)
 }
-code:before,
-code:after {
-  content: '\`';
+
+.tab>div>div:last-child{
+    font-size:18px;
+}
+
+.body{
+    padding:15px 20px;
+}
+.content{
+    position: relative;
+    height:55px;
+    border: 1px solid #ccc;
+    margin-bottom:5px;
+}
+.pic{
+    height:50px;
+    width:40px;
+    margin-left:10px;
+    background: url(./apple.png) no-repeat;
+    background-size:cover;
+}
+
+.title{
+    position:absolute;
+    left:60px;
+    top:10px;
+    color:rgb(0, 194, 253);
+}
+.info{
+    position:absolute;
+    left:60px;
+    top:27.5px;
+}
+
+.content>.btn{
+    border-radius: 5px;
+    width:70px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    background:rgb(0, 154, 201);
+    color:white;
+    position:absolute;
+    top:8px;
+    right:15px;
+    cursor: pointer;
+}
+
+.content>.btn2{
+    border-radius: 5px;
+    width:70px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    background:rgb(201, 114, 0);
+    color:white;
+    position:absolute;
+    top:8px;
+    right:15px;
+    cursor: pointer;
+}
+
+.btnSub{
+    border-radius: 5px;
+    width:100px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    background:rgb(54, 146, 0);
+    color:white;
+    margin:0 auto;
+    margin-top:15px;
+    cursor: pointer;
+}
+
+.btnSub2{
+    border-radius: 5px;
+    width:100px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    background:rgb(98, 104, 95);
+    color:white;
+    margin:0 auto;
+    margin-top:15px;
+    cursor: pointer;
 }

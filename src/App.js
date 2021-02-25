@@ -1,57 +1,59 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import './App.css';
+import './App.css'
+import React, { Component } from 'react'
+import { inject, observer } from 'mobx-react'
 
-function App() {
-  const [date, setDate] = useState(null);
-  useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.text();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
-  return (
-    <main>
-      <h1>Create React App + Go API</h1>
-      <h2>
-        Deployed with{' '}
-        <a
-          href="https://vercel.com/docs"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Vercel
-        </a>
-        !
-      </h2>
-      <p>
-        <a
-          href="https://github.com/vercel/vercel/tree/master/examples/create-react-app"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          This project
-        </a>{' '}
-        was bootstrapped with{' '}
-        <a href="https://facebook.github.io/create-react-app/">
-          Create React App
-        </a>{' '}
-        and contains three directories, <code>/public</code> for static assets,{' '}
-        <code>/src</code> for components and content, and <code>/api</code>{' '}
-        which contains a serverless <a href="https://golang.org/">Go</a>{' '}
-        function. See{' '}
-        <a href="/api/date">
-          <code>api/date</code> for the Date API with Go
-        </a>
-        .
-      </p>
-      <br />
-      <h2>The date according to Go is:</h2>
-      <p>{date ? date : 'Loading date...'}</p>
-    </main>
-  );
+@inject('counter')
+@observer
+class App extends Component {
+	render() {
+		const { total, totaled, apples, eat, find, flag } = this.props.counter
+		return (
+			<div className="App">
+				<div className="box">
+					<div className="table">
+						<div className="header">苹果篮子</div>
+						<div className="tab">
+							<div>
+								<div>当前</div>
+								<div>{total}</div>
+							</div>
+							<div>
+								<div>已吃掉</div>
+								<div>{totaled}</div>
+							</div>
+						</div>
+						<div className="body">
+							{apples.map((item, index) => {
+								return (
+									<div className="content" key={index}>
+										<div className="pic"></div>
+										<div className="title">红苹果</div>
+										<div className="info">{item.info}</div>
+										{item.eating && (
+											<div className="btn2">
+												正在吃
+											</div>
+										)}
+										{!item.eating && (
+											<div className="btn" onClick={() => eat(index)}>
+												吃掉
+											</div>
+										)}
+									</div>
+								)
+							})}
+							{!flag && (
+								<div className="btnSub" onClick={() => find()}>
+									摘苹果
+								</div>
+							)}
+							{flag && <div className="btnSub2">正在摘取</div>}
+						</div>
+					</div>
+				</div>
+			</div>
+		)
+	}
 }
 
-export default App;
+export default App
