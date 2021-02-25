@@ -6,7 +6,7 @@ import { inject, observer } from 'mobx-react'
 @observer
 class App extends Component {
 	render() {
-		const { total, totaled, apples, eat, find, flag } = this.props.counter
+		const { total, totaled, apples, eat, find, flag ,eated} = this.props.counter
 		return (
 			<div className="App">
 				<div className="box">
@@ -15,11 +15,11 @@ class App extends Component {
 						<div className="tab">
 							<div>
 								<div>当前</div>
-								<div>{total}</div>
+								<div>{apples.length}个苹果，{total}克</div>
 							</div>
 							<div>
 								<div>已吃掉</div>
-								<div>{totaled}</div>
+								<div>{eated}个，{totaled}克</div>
 							</div>
 						</div>
 						<div className="body">
@@ -27,8 +27,8 @@ class App extends Component {
 								return (
 									<div className="content" key={index}>
 										<div className="pic"></div>
-										<div className="title">红苹果</div>
-										<div className="info">{item.info}</div>
+										<div className="title">红苹果 - {item.id}号</div>
+										<div className="info">{item.info}克</div>
 										{item.eating && (
 											<div className="btn2">
 												正在吃

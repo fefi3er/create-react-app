@@ -6,11 +6,13 @@ class CounterStore {
 	@observable appled = []
 	@observable total = 0
 	@observable totaled = 0
+	@observable eated = 0
 	@observable flag = false
 
 	@action.bound eat(index) {
 		this.apples[index].eating = true
 		setTimeout(() => {
+			this.eated ++
 			this.totaled += this.apples[index].info
 			this.total -= this.apples[index].info
 			this.apples.splice(index, 1)
