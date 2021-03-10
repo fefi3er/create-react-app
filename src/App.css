@@ -1,121 +1,137 @@
-body{
-    padding:20px;
-}
-.box{
-    width:500px;
-    padding:15px 10px;
-    border:1px solid #ccc;
-}
-.table{
-    border:1px solid #ccc;
-}
-.header{
-    font-size:24px;
-    height:50px;
-    line-height: 50px;
-    text-align: center;
-    color:rgb(0, 194, 253);
-    border-bottom: 1px dotted #ccc;
+.App {
+  text-align: center;
+  font-size: 16px;
+  min-width: 900px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.tab{
-    display: flex;
-    border-bottom: 1px dotted #ccc;
-}
-.tab>div{
-    width:50%;
-    padding:10px;
-    line-height:28px;
-}
-
-.tab>div>div:first-child{
-    font-size:16x;
-    color:rgb(0, 119, 255)
+.box {
+  width: 400px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .1);
 }
 
-.tab>div>div:last-child{
-    font-size:18px;
+.tabs {
+  margin: 0 auto 50px;
+  padding: 10px;
+  font-weight: 400;
+  color: #969696;
 }
 
-.body{
-    padding:15px 20px;
-}
-.content{
-    position: relative;
-    height:55px;
-    border: 1px solid #ccc;
-    margin-bottom:5px;
-}
-.pic{
-    height:50px;
-    width:40px;
-    margin-left:10px;
-    background: url(./apple.png) no-repeat;
-    background-size:cover;
+.tabs a {
+  padding: 10px;
+  color: #969696;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-.title{
-    position:absolute;
-    left:60px;
-    top:10px;
-    color:rgb(0, 194, 253);
-}
-.info{
-    position:absolute;
-    left:60px;
-    top:27.5px;
+.tabs b {
+  padding: 10px;
+  font-weight: 700;
 }
 
-.content>.btn{
-    border-radius: 5px;
-    width:70px;
-    height:40px;
-    line-height: 40px;
-    text-align: center;
-    background:rgb(0, 154, 201);
-    color:white;
-    position:absolute;
-    top:8px;
-    right:15px;
-    cursor: pointer;
+.tabs a.active {
+  font-weight: 700;
+  color: #ea6f5a;
+  border-bottom: 2px solid #ea6f5a;
 }
 
-.content>.btn2{
-    border-radius: 5px;
-    width:70px;
-    height:40px;
-    line-height: 40px;
-    text-align: center;
-    background:rgb(201, 114, 0);
-    color:white;
-    position:absolute;
-    top:8px;
-    right:15px;
-    cursor: pointer;
+.tabs a:hover {
+  border-bottom: 2px solid #ea6f5a;
 }
 
-.btnSub{
-    border-radius: 5px;
-    width:100px;
-    height:40px;
-    line-height: 40px;
-    text-align: center;
-    background:rgb(54, 146, 0);
-    color:white;
-    margin:0 auto;
-    margin-top:15px;
-    cursor: pointer;
+.form {
+  position: relative;
+  text-align: left;
+  font-size: 14px;
 }
 
-.btnSub2{
-    border-radius: 5px;
-    width:100px;
-    height:40px;
-    line-height: 40px;
-    text-align: center;
-    background:rgb(98, 104, 95);
-    color:white;
-    margin:0 auto;
-    margin-top:15px;
-    cursor: pointer;
+.form input {
+  width: 100%;
+  color: #333;
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  padding: 4px 12px 4px 35px;
+  border: 1px solid #c8c8c8;
+  border-bottom-color: rgb(200, 200, 200);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-radius: 0 0 4px 4px;
+  background-color: hsla(0, 0%, 71%, .1);
+  vertical-align: middle;
+}
+
+.form .input:first-child {
+  border-bottom-width: 0;
+  border-radius: 4px 4px 0 0;
+}
+
+#checkbox {
+  width: auto;
+}
+
+.checkbox {
+  margin-left: 5px;
+  font-size: 15px;
+  color: #969696;
+  vertical-align: middle;
+}
+
+#phone {
+  border-radius: 0;
+  border-bottom-width: 0;
+}
+
+.btn {
+  margin-top: 50px;
+  width: 100%;
+  padding: 9px 18px !important;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px !important;
+  color: #fff !important;
+  background: rgb(49, 148, 208) !important;
+  display: block;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  background: #187cb7 !important;
+}
+
+#submit {
+  background: rgb(66, 192, 46)!important;
+  margin-top: 53px;
+}
+
+#submit:hover {
+  background: rgb(61, 185, 34)!important;
+
+}
+
+p {
+  color: #333;
+  border: 1px solid #ea6f5a;
+  position: absolute;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  bottom: 48px;
+  width: 100%;
+  text-align: center;
+  display: none;
+  border-radius: 4px;
+}
+
+p.show {
+  display: block;
 }
